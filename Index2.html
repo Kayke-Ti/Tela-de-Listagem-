@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Lista em Javascript!</title>
+    <style>
+        .body{
+          margin: 0;
+          padding: 0 ;
+        }
+
+      .ul{
+        font-size: 40px;
+      }
+    
+   
+      
+    </style>
+  </head>
+  <body>
+    
+    <h1>Cadastre seus produtos</h1>
+    
+    <input type="text" id="produtos"/>
+    <button id="btn">Cadastrar</button>
+    
+    
+    
+  <ul>
+    <li>Carne</li>
+    <li>Maça</li>
+    <li>Feijão</li>
+    <li>Biscoito</li>
+  </ul>
+    
+    <script>
+      var $lista = document.querySelector('ul');
+      var $produtos = document.querySelector('#produtos');
+      var $botao = document.querySelector('#btn');
+      
+      $botao.addEventListener('click', addProdutos)
+         
+      function addProdutos (){
+          var item = '<li>' + $produtos.value + '</li>';
+          $lista.innerHTML += item;
+          $produtos.value = '';
+          $produtos.focus();
+      }
+     
+     $produtos.addEventListener('keyup' , function(e) {
+       if (e.KeyCode === 13) {
+         addProdutos()
+       }
+       
+     })
+    
+    </script>
+    
+    
+    
+  </body>
+</html>
